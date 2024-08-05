@@ -7,10 +7,12 @@ const {
   resetCodeCheck,
   resetPassword,
 } = require("./controller");
+const authValidation = require("../validations/authValidation")
 
-router.post("/register", register);
 
-router.post("/login", login);
+router.post("/register",authValidation.register, register);
+
+router.post("/login", authValidation.login,login);
 
 router.post("/forget-password", forgetPassword);
 
