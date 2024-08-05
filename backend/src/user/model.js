@@ -24,6 +24,16 @@ const userSchema = new mongoose.Schema(
       enum: ["user", "admin"],
       default: "user",
     },
+    reset:{
+      code:{
+        type:String,
+        default:null
+      },
+      time:{
+        type:Date,
+        default:null
+      }
+    }
   },
   {
     collection: "User",
